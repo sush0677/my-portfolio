@@ -50,10 +50,10 @@ function About() {
         {/* Social Media Links */}
         <div style={styles.socialMediaLinks}>
           <a href="https://www.youtube.com/channel/UChhvcgGTBrI9JLZFirWGPRw" style={styles.link} target="_blank" rel="noopener noreferrer">
-            Watch My YouTube Channel
+            Watch the YouTube Channel
           </a> | 
           <a href="https://www.instagram.com/ai_canvas0677?igsh=MXVtc2Nid2N6ODhxeg%3D%3D" style={styles.link} target="_blank" rel="noopener noreferrer">
-            Follow Me on Instagram
+            Follow on Instagram
           </a>
         </div>
       </div>

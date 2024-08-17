@@ -5,7 +5,7 @@ function Home() {
     <div style={styles.pageBackground}>
       <div style={styles.container}>
         {/* Profile Photo */}
-        <img src="/photo.jpg" alt="Sushant P" style={styles.profilePhoto} />
+        <img src="/assests/images/photo.jpg" alt="Sushant P" style={styles.profilePhoto} />
 
         {/* Introduction Section */}
         <h1 style={styles.heading}>Welcome to My Portfolio</h1>
@@ -41,7 +41,7 @@ function Home() {
 
         {/* Resume and LinkedIn Links */}
         <p style={styles.links}>
-          <a href="/resume.pdf" style={styles.link}>View My Resume</a> | 
+          <a href="/assests/images/resume.pdf" style={styles.link}>View My Resume</a> | 
           <a href="https://www.linkedin.com/in/sushant-p-a105a9240/" style={styles.link}>Connect on LinkedIn</a>
         </p>
       </div>

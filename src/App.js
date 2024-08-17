@@ -61,32 +61,32 @@ function MainApp() {
 // Background Styles
 const styles = {
   homeBackground: {
-    backgroundImage: 'url(/home.webp)', // Correct path for public directory
+    backgroundImage: 'url(/assests/images/home.webp)', // Correct path for public directory
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
   aboutBackground: {
-    backgroundImage: 'url(/about.webp)', // Correct path for public directory
+    backgroundImage: 'url(/assests/images/about.webp)', // Correct path for public directory
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
   projectsBackground: {
-    backgroundImage: 'url(/project.webp)', // Correct path for public directory
+    backgroundImage: 'url(/assests/images/project.webp)', // Correct path for public directory
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
   experienceBackground: {
-    backgroundImage: 'url(/expierence.webp)', // Correct path for public directory
+    backgroundImage: 'url(/assests/images/Expierence.webp)', // Correct path for public directory
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
   contactBackground: {
-    backgroundImage: 'url(/contact.webp)', // Correct path for public directory
+    backgroundImage: 'url(/assests/images/contact.webp)', // Correct path for public directory
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
   certificationsBackground: {
-    backgroundImage: 'url(/certification.webp)', // Correct path for public directory
+    backgroundImage: 'url(/assests/images/certification.webp)', // Correct path for public directory
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
