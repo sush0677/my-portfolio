@@ -1,0 +1,51 @@
+{
+  "name": "sushant-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Sushant Patil - AI Adoptions Coordinator at Nathan Digital. Interactive 3D portfolio showcasing expertise in AI strategy and digital transformation.",
+  "keywords": [
+    "AI Adoption",
+    "Digital Transformation",
+    "Three.js",
+    "React",
+    "Portfolio",
+    "Nathan Digital",
+    "AI Strategy"
+  ],
+  "author": "Sushant Patil <sushant007.p7@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "node ./node_modules/vite/bin/vite.js preview",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.88.0",
+    "@react-three/fiber": "^8.15.0",
+    "@react-three/postprocessing": "^2.15.0",
+    "framer-motion": "^10.16.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.150.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.150.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "vite": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sushant/interactive-portfolio.git"
+  },
+  "homepage": "https://sushant-portfolio.com"
+}

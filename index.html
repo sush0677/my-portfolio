@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/assests/images/photo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sushant Patil - AI Adoptions Coordinator at Nathan Digital. Interactive 3D portfolio showcasing expertise in AI strategy and digital transformation." />
+    <meta name="keywords" content="AI Adoption, Digital Transformation, Three.js, React, Portfolio, Nathan Digital, AI Strategy" />
+    <meta name="author" content="Sushant Patil" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sushant-portfolio.com/" />
+    <meta property="og:title" content="Sushant Patil - AI Adoptions Coordinator" />
+    <meta property="og:description" content="Interactive 3D portfolio showcasing AI adoption expertise and digital transformation leadership." />
+    <meta property="og:image" content="/assests/images/photo.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sushant-portfolio.com/" />
+    <meta property="twitter:title" content="Sushant Patil - AI Adoptions Coordinator" />
+    <meta property="twitter:description" content="Interactive 3D portfolio showcasing AI adoption expertise and digital transformation leadership." />
+    <meta property="twitter:image" content="/assests/images/photo.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <title>Sushant Patil - AI Adoptions Coordinator | Interactive 3D Portfolio</title>
+    
+    <style>
+      /* Prevent FOUC (Flash of Unstyled Content) */
+      html {
+        background: linear-gradient(135deg, #0c4a6e 0%, #082f49 100%);
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', system-ui, sans-serif;
+        background: linear-gradient(135deg, #0c4a6e 0%, #082f49 100%);
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+      
+      /* Loading animation */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0c4a6e 0%, #082f49 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-content {
+        text-align: center;
+        color: #ffffff;
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top: 3px solid #0ea5e9;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loading-text {
+        font-size: 18px;
+        font-weight: 500;
+        color: #0ea5e9;
+        margin-bottom: 10px;
+      }
+      
+      .loading-subtext {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading Portfolio</div>
+        <div class="loading-subtext">Bridging AI Innovation with Business Adoption</div>
+      </div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <script>
+      // Hide loading screen when app is ready
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+              loadingScreen.style.display = 'none';
+            }, 500);
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html> 
