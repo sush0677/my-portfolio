@@ -1,84 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { personalInfo } from '../utils/personalInfo';
 
 const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  const projects = [
-    {
-      id: 1,
-      title: '3D Portfolio Website',
-      description: 'An interactive 3D portfolio built with React, Three.js, and TypeScript. Features floating navigation objects and smooth animations.',
-      technologies: ['React', 'Three.js', 'TypeScript', 'Framer Motion'],
-      category: 'web',
-      image: '🎨',
-      link: '#',
-      github: '#'
-    },
-    {
-      id: 2,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      category: 'web',
-      image: '🛒',
-      link: '#',
-      github: '#'
-    },
-    {
-      id: 3,
-      title: 'AI Chat Application',
-      description: 'Real-time chat application powered by AI, featuring natural language processing and smart responses.',
-      technologies: ['Python', 'TensorFlow', 'WebSocket', 'React'],
-      category: 'ai',
-      image: '🤖',
-      link: '#',
-      github: '#'
-    },
-    {
-      id: 4,
-      title: 'Mobile Game',
-      description: 'Cross-platform mobile game built with Unity, featuring 3D graphics and multiplayer functionality.',
-      technologies: ['Unity', 'C#', 'Photon', 'Blender'],
-      category: 'game',
-      image: '🎮',
-      link: '#',
-      github: '#'
-    },
-    {
-      id: 5,
-      title: 'Data Visualization Dashboard',
-      description: 'Interactive dashboard for analyzing and visualizing complex datasets with real-time updates.',
-      technologies: ['D3.js', 'React', 'Python', 'PostgreSQL'],
-      category: 'data',
-      image: '📊',
-      link: '#',
-      github: '#'
-    },
-    {
-      id: 6,
-      title: 'Blockchain DApp',
-      description: 'Decentralized application built on Ethereum, featuring smart contracts and Web3 integration.',
-      technologies: ['Solidity', 'React', 'Web3.js', 'Hardhat'],
-      category: 'blockchain',
-      image: '⛓️',
-      link: '#',
-      github: '#'
-    }
-  ];
-
-  const categories = [
-    { id: 'all', name: 'All Projects' },
-    { id: 'web', name: 'Web Development' },
-    { id: 'ai', name: 'AI & ML' },
-    { id: 'game', name: 'Game Development' },
-    { id: 'data', name: 'Data Science' },
-    { id: 'blockchain', name: 'Blockchain' }
-  ];
-
   const filteredProjects = selectedCategory === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+    ? personalInfo.projects 
+    : personalInfo.projects.filter(project => project.category === selectedCategory);
 
   return (
     <motion.div
@@ -88,22 +17,38 @@ const Projects: React.FC = () => {
       transition={{ duration: 0.8 }}
     >
       <div className="content">
-        <motion.h1
-          className="title"
-          initial={{ opacity: 0, y: -20 }}
+        <motion.div
+          className="projects-content"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          My Projects
-        </motion.h1>
+          {/* Welcome Header */}
+          <motion.h1
+            className="welcome-header"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            My Projects
+          </motion.h1>
+          
+          <motion.h2
+            className="welcome-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            Explore my work and technical achievements
+          </motion.h2>
 
-        <motion.div
+          <motion.div
           className="category-filter"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          {categories.map((category) => (
+          {personalInfo.projectCategories.map((category) => (
             <button
               key={category.id}
               className={`category-btn ${selectedCategory === category.id ? 'active' : ''}`}
@@ -157,6 +102,7 @@ const Projects: React.FC = () => {
               </motion.div>
             ))}
           </AnimatePresence>
+        </motion.div>
         </motion.div>
       </div>
     </motion.div>

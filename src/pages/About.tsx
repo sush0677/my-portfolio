@@ -1,16 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { personalInfo } from '../utils/personalInfo';
 
 const About: React.FC = () => {
-  const skills = [
-    { name: 'React', level: 90, color: '#61dafb' },
-    { name: 'TypeScript', level: 85, color: '#3178c6' },
-    { name: 'Three.js', level: 80, color: '#000000' },
-    { name: 'Node.js', level: 85, color: '#339933' },
-    { name: 'Python', level: 80, color: '#3776ab' },
-    { name: 'CSS/SCSS', level: 90, color: '#1572b6' }
-  ];
-
   return (
     <motion.div
       className="page about-page"
@@ -32,22 +24,66 @@ const About: React.FC = () => {
           className="about-content"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
+          {/* Welcome Header */}
+          <motion.h1
+            className="welcome-header"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            About Sushant
+          </motion.h1>
+          
+          <motion.h2
+            className="welcome-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            Learn more about my background and experience
+          </motion.h2>
+
           <div className="about-text">
-            <p>
-              I'm a passionate full-stack developer with a love for creating immersive digital experiences. 
-              My journey in web development started with a curiosity about how things work on the internet, 
-              and it has evolved into a passion for building beautiful, functional, and user-friendly applications.
-            </p>
-            <p>
-              I specialize in modern web technologies, with particular expertise in React, TypeScript, and 3D graphics. 
-              I believe in writing clean, maintainable code and creating experiences that users love to interact with.
-            </p>
-            <p>
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
-              or sharing knowledge with the developer community.
-            </p>
+            <p>{personalInfo.about.intro}</p>
+            <p>{personalInfo.about.specialization}</p>
+            <p>{personalInfo.about.interests}</p>
+          </div>
+        </motion.div>
+
+        {/* Professional Experience Section */}
+        <motion.div
+          className="experience-section"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <h2>Professional Experience</h2>
+          <div className="experience-grid">
+            {personalInfo.experience?.map((exp, index) => (
+              <motion.div
+                key={index}
+                className="experience-item"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+              >
+                <div className="experience-header">
+                  <h3>{exp.title}</h3>
+                  <span className="company">{exp.company}</span>
+                  <span className="duration">{exp.duration}</span>
+                </div>
+                <p className="experience-description">{exp.description}</p>
+                <div className="experience-technologies">
+                  {exp.technologies.map((tech, techIndex) => (
+                    <span key={techIndex} className="tech-tag">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
@@ -59,7 +95,7 @@ const About: React.FC = () => {
         >
           <h2>Technical Skills</h2>
           <div className="skills-grid">
-            {skills.map((skill, index) => (
+            {personalInfo.skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
                 className="skill-item"
@@ -91,24 +127,14 @@ const About: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <h2>Interests & Hobbies</h2>
+          <h2>Areas of Interest</h2>
           <div className="interests-grid">
-            <div className="interest-item">
-              <span className="interest-icon">🎮</span>
-              <span>Game Development</span>
-            </div>
-            <div className="interest-item">
-              <span className="interest-icon">🎨</span>
-              <span>Digital Art</span>
-            </div>
-            <div className="interest-item">
-              <span className="interest-icon">📚</span>
-              <span>Learning New Tech</span>
-            </div>
-            <div className="interest-item">
-              <span className="interest-icon">🌍</span>
-              <span>Open Source</span>
-            </div>
+            {personalInfo.interests.map((interest, index) => (
+              <div key={index} className="interest-item">
+                <span className="interest-icon">{interest.icon}</span>
+                <span>{interest.label}</span>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>

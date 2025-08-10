@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { personalInfo } from '../utils/personalInfo';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -31,13 +32,6 @@ const Contact: React.FC = () => {
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
-  const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com', icon: '🐙' },
-    { name: 'LinkedIn', url: 'https://linkedin.com', icon: '💼' },
-    { name: 'Twitter', url: 'https://twitter.com', icon: '🐦' },
-    { name: 'Portfolio', url: '#', icon: '🌐' }
-  ];
-
   return (
     <motion.div
       className="page contact-page"
@@ -46,44 +40,45 @@ const Contact: React.FC = () => {
       transition={{ duration: 0.8 }}
     >
       <div className="content">
-        <motion.h1
-          className="title"
-          initial={{ opacity: 0, y: -20 }}
+        <motion.div
+          className="contact-content"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Get In Touch
-        </motion.h1>
-
-        <motion.p
-          className="subtitle"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
-        </motion.p>
-
-        <div className="contact-content">
-          <motion.div
-            className="contact-info"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+          {/* Welcome Header */}
+          <motion.h1
+            className="welcome-header"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
           >
+            Get In Touch
+          </motion.h1>
+          
+          <motion.h2
+            className="welcome-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            Let's connect and discuss opportunities
+          </motion.h2>
+
+          <div className="contact-info">
             <h2>Let's Connect</h2>
             <div className="info-item">
               <span className="info-icon">📧</span>
               <div>
                 <h3>Email</h3>
-                <p>hello@yourportfolio.com</p>
+                <p>{personalInfo.email}</p>
               </div>
             </div>
             <div className="info-item">
               <span className="info-icon">📍</span>
               <div>
                 <h3>Location</h3>
-                <p>Your City, Country</p>
+                <p>{personalInfo.location}</p>
               </div>
             </div>
             <div className="info-item">
@@ -97,7 +92,7 @@ const Contact: React.FC = () => {
             <div className="social-links">
               <h3>Follow Me</h3>
               <div className="social-grid">
-                {socialLinks.map((social, index) => (
+                {personalInfo.socialLinks.map((social, index) => (
                   <motion.a
                     key={social.name}
                     href={social.url}
@@ -116,7 +111,7 @@ const Contact: React.FC = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           <motion.div
             className="contact-form"
@@ -189,7 +184,7 @@ const Contact: React.FC = () => {
               </motion.button>
             </form>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );

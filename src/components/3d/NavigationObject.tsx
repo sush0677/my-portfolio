@@ -39,10 +39,18 @@ const NavigationObject: React.FC<NavigationObjectProps> = ({
       // Hover animation
       if (isHovered) {
         meshRef.current.scale.setScalar(scale * 1.2);
-        meshRef.current.material.emissiveIntensity = 0.3;
+        // Cast to MeshStandardMaterial to access emissiveIntensity
+        const material = meshRef.current.material as THREE.MeshStandardMaterial;
+        if (material) {
+          material.emissiveIntensity = 0.3;
+        }
       } else {
         meshRef.current.scale.setScalar(scale);
-        meshRef.current.material.emissiveIntensity = 0;
+        // Cast to MeshStandardMaterial to access emissiveIntensity
+        const material = meshRef.current.material as THREE.MeshStandardMaterial;
+        if (material) {
+          material.emissiveIntensity = 0;
+        }
       }
     }
   });
@@ -57,26 +65,16 @@ const NavigationObject: React.FC<NavigationObjectProps> = ({
 
   const renderGeometry = () => {
     switch (geometry) {
-      case 'sphere':
-        return <sphereGeometry args={[0.5, 32, 32]} />;
-      case 'cube':
-        return <boxGeometry args={[1, 1, 1]} />;
-      case 'torus':
-        return <torusGeometry args={[0.5, 0.2, 16, 32]} />;
-      case 'octahedron':
-        return <octahedronGeometry args={[0.5]} />;
-      default:
-        return <sphereGeometry args={[0.5, 32, 32]} />;
+      case 'sphere': return <sphereGeometry args={[0.5, 32, 32]} />;
+      case 'cube': return <boxGeometry args={[1, 1, 1]} />;
+      case 'torus': return <torusGeometry args={[0.5, 0.2, 16, 32]} />;
+      case 'octahedron': return <octahedronGeometry args={[0.5]} />;
+      default: return <sphereGeometry args={[0.5, 32, 32]} />;
     }
   };
 
   return (
-    <Float
-      speed={1.5}
-      rotationIntensity={0.5}
-      floatIntensity={0.5}
-      position={position}
-    >
+    <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5} position={position}>
       <group rotation={rotation}>
         <mesh
           ref={meshRef}
