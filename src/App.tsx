@@ -2,7 +2,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import {
   ChevronRight,
-  Linkedin,
   Sparkles,
   Github,
   BrainCircuit,
