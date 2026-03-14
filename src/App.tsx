@@ -8,14 +8,19 @@ import {
   Mail,
   GraduationCap,
   Sparkles,
-  Network
+  Github,
+  Code,
+  Database,
+  BrainCircuit,
+  Cpu
 } from 'lucide-react';
 import { cn } from './utils/cn';
+import { CanvasHero } from './components/CanvasHero';
 
 function App() {
-  const bentoVariant: import('framer-motion').Variants = {
+  const bentoVariant = {
     hidden: { opacity: 0, scale: 0.95, y: 10 },
-    visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } }
+    visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring" as const, stiffness: 100, damping: 20 } }
   };
 
   const containerVariant = {
@@ -24,8 +29,11 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-gray-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden">
-      {/* High-Tech Background Lines */}
+    <div className="min-h-screen bg-[#050505] text-gray-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden relative">
+      {/* Interactive 3D Canvas Background */}
+      <CanvasHero />
+
+      {/* High-Tech Background Lines - Overlaying the 3D Canvas partially */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.03]"
         style={{
           backgroundImage: `linear-gradient(to right, #808080 1px, transparent 1px), linear-gradient(to bottom, #808080 1px, transparent 1px)`,
@@ -42,11 +50,12 @@ function App() {
             initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-cyan-400 font-bold"
           >
-            <Terminal size={16} /> SYS.SUSHANT_P
+            <Bot size={18} className="text-cyan-400 animate-pulse" /> AI.ENG_SUSHANTPATIL
           </motion.div>
           <div className="hidden md:flex gap-8 text-xs font-mono tracking-widest uppercase text-gray-500">
-            <a href="#about" className="hover:text-cyan-400 transition-colors">Data_01.About</a>
-            <a href="#mission" className="hover:text-cyan-400 transition-colors">Data_02.Mission</a>
+            <a href="#about" className="hover:text-cyan-400 transition-colors">Data_01.Identity</a>
+            <a href="#skills" className="hover:text-cyan-400 transition-colors">Data_02.Systems</a>
+            <a href="#rabbitron" className="hover:text-cyan-400 transition-colors">Data_03.Agents</a>
             <a href="#contact" className="hover:text-cyan-400 transition-colors underline decoration-cyan-500/50 underline-offset-4">Connect</a>
           </div>
         </div>
@@ -62,31 +71,31 @@ function App() {
           className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-auto"
         >
           {/* Main Identity Card */}
-          <motion.div variants={bentoVariant} className="md:col-span-8 bg-zinc-900/40 p-10 rounded-3xl border border-white/5 backdrop-blur-sm relative overflow-hidden group hover:border-cyan-500/30 transition-all duration-500">
+          <motion.div variants={bentoVariant} id="about" className="md:col-span-8 bg-zinc-900/40 p-10 rounded-3xl border border-white/5 backdrop-blur-sm relative overflow-hidden group hover:border-cyan-500/30 transition-all duration-500 shadow-2xl shadow-black/50">
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl group-hover:bg-cyan-500/10 transition-all" />
 
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-mono uppercase tracking-wider mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              Open to Resolve Tech Doubts
+              Director of External Affairs @ Rabbitron Labs
             </div>
 
             <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-white mb-6 leading-[1.1]">
-              Bridging the gap between <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">
-                Humanity and AI.
+              Architecting <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400 border-b-2 border-dashed border-cyan-500/30 pb-1">
+                Autonomous Agents.
               </span>
             </h1>
 
             <p className="text-lg text-gray-400 max-w-xl font-light leading-relaxed mb-8">
-              I am an AI advocate and problem solver. As the <strong className="text-white font-medium">AI Adoption Coordinator</strong> at Nathan Digital, and the founder of Rabbitron Lab, my mission is to demystify complex AI concepts and help you build adopting strategies.
+              I am an AI Developer bridging humanity and sophisticated engineering. With an MSc in Computer Science from the University of Birmingham, I specialize in building generative agent systems and orchestrating AI workflows at <strong className="text-white font-medium">Nathan Digital</strong>.
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a href="#contact" className="px-6 py-3 bg-white text-black rounded-full font-medium text-sm hover:bg-gray-200 transition-all flex items-center gap-2">
-                Ask a Question <MessageSquare size={16} />
+              <a href="#projects" className="px-6 py-3 bg-white text-black rounded-full font-medium text-sm hover:bg-gray-200 transition-all flex items-center gap-2 shadow-lg shadow-white/10">
+                View AI Projects <ChevronRight size={16} />
               </a>
-              <a href="#rabbitron" className="px-6 py-3 bg-zinc-800 text-white rounded-full font-medium text-sm hover:bg-zinc-700 transition-all border border-zinc-700 flex items-center gap-2">
-                Join Community <Network size={16} />
+              <a href="https://github.com/sush0677" target="_blank" rel="noreferrer" className="px-6 py-3 bg-zinc-800 text-white rounded-full font-medium text-sm hover:bg-zinc-700 transition-all border border-zinc-700 flex items-center gap-2 group-hover:border-cyan-500/50">
+                Process GitHub <Github size={16} />
               </a>
             </div>
           </motion.div>
@@ -100,50 +109,101 @@ function App() {
             <div className="absolute bottom-8 left-8 w-2 h-2 border-b border-l border-cyan-400 z-10" />
             <div className="absolute bottom-8 right-8 w-2 h-2 border-b border-r border-cyan-400 z-10" />
 
+            {/* Scanline effect */}
+            <div className="absolute inset-0 z-20 pointer-events-none bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] opacity-20" />
+
             <img
               src="/my-portfolio/profile.png"
-              alt="Sushant P"
+              alt="Sushant Patil - AI Engineer"
               className="w-full h-full object-cover rounded-[1.25rem] filter grayscale hover:grayscale-0 transition-all duration-700 opacity-90"
             />
           </motion.div>
 
-          {/* Nathan Digital Card */}
-          <motion.div variants={bentoVariant} className="md:col-span-4 bg-zinc-900/40 p-8 rounded-3xl border border-white/5 backdrop-blur-sm hover:border-purple-500/30 transition-all group">
-            <div className="w-10 h-10 bg-purple-500/10 rounded-full flex items-center justify-center mb-6">
-              <Bot className="text-purple-400" size={20} />
+          {/* Technical Skills Bento */}
+          <motion.div variants={bentoVariant} id="skills" className="md:col-span-8 bg-zinc-900/40 p-8 rounded-3xl border border-white/5 backdrop-blur-sm relative overflow-hidden group hover:border-violet-500/30 transition-all">
+            <h3 className="text-xl font-medium text-white mb-6 flex items-center gap-2">
+              <BrainCircuit className="text-violet-400" size={20} /> Core AI Frameworks
+            </h3>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="space-y-4 border-l border-white/5 pl-4">
+                <div className="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Models & Frameworks</div>
+                <div className="flex items-center gap-2 text-sm text-gray-300 font-medium">PyTorch</div>
+                <div className="flex items-center gap-2 text-sm text-gray-300 font-medium">TensorFlow</div>
+                <div className="flex items-center gap-2 text-sm text-gray-300 font-medium">Azure OpenAI LLMs</div>
+              </div>
+              <div className="space-y-4 border-l border-white/5 pl-4">
+                <div className="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Agent Orchestration</div>
+                <div className="flex items-center gap-2 text-sm text-gray-300 font-medium">LangChain</div>
+                <div className="flex items-center gap-2 text-sm text-gray-300 font-medium">Hugging Face</div>
+                <div className="flex items-center gap-2 text-sm text-gray-300 font-medium">Self-Critic Agents</div>
+              </div>
+              <div className="space-y-4 border-l border-white/5 pl-4">
+                <div className="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Vector Processing</div>
+                <div className="flex items-center gap-2 text-sm text-gray-300 font-medium"><Database size={14} className="text-emerald-400" /> FAISS</div>
+                <div className="flex items-center gap-2 text-sm text-gray-300 font-medium"><Database size={14} className="text-emerald-400" /> ChromaDB</div>
+                <div className="flex items-center gap-2 text-sm text-gray-300 font-medium"><Database size={14} className="text-emerald-400" /> PostgreSQL / SQL</div>
+              </div>
+              <div className="space-y-4 border-l border-white/5 pl-4">
+                <div className="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Systems</div>
+                <div className="flex items-center gap-2 text-sm text-gray-300 font-medium"><Terminal size={14} className="text-cyan-400" /> Python / Flask</div>
+                <div className="flex items-center gap-2 text-sm text-gray-300 font-medium"><Code size={14} className="text-cyan-400" /> React / UI</div>
+                <div className="flex items-center gap-2 text-sm text-gray-300 font-medium"><Cpu size={14} className="text-cyan-400" /> Pandas / OpenCV</div>
+              </div>
             </div>
-            <h3 className="text-2xl font-medium text-white mb-2">Nathan Digital</h3>
-            <p className="text-purple-400 text-sm font-mono mb-4">AI Adoption Coordinator</p>
+          </motion.div>
+
+          {/* Hackathon/Experience Card */}
+          <motion.div variants={bentoVariant} className="md:col-span-4 bg-zinc-900/40 p-8 rounded-3xl border border-white/5 backdrop-blur-sm hover:border-emerald-500/30 transition-all group">
+            <div className="w-10 h-10 bg-emerald-500/10 rounded-full flex items-center justify-center mb-6 border border-emerald-500/20">
+              <Bot className="text-emerald-400" size={20} />
+            </div>
+            <h3 className="text-xl font-medium text-white mb-2">Hackathon Veteran</h3>
+            <p className="text-emerald-400 text-sm font-mono mb-4">Pull Shark Achiever</p>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Facilitating the seamless integration of Artificial Intelligence into enterprise workflows, boosting efficiency and modernization.
+              Participated in multiple high-stakes AI hackathons. Proven track record of architecting deep-learning solutions (like Compass_hack) under immense pressure and tight deadlines. Over 800+ GitHub contributions built in public.
             </p>
           </motion.div>
 
-          {/* Rabbitron Lab Card (Wider) */}
-          <motion.div variants={bentoVariant} id="rabbitron" className="md:col-span-8 bg-gradient-to-br from-cyan-900/20 to-zinc-900/40 p-8 rounded-3xl border border-white/5 backdrop-blur-sm relative overflow-hidden group">
-            <div className="absolute right-0 bottom-0 opacity-10 transform translate-x-1/4 translate-y-1/4 group-hover:scale-110 transition-transform duration-700">
-              <GraduationCap size={200} />
-            </div>
+          {/* Project Focus / Rabbitron Lab (Wider) */}
+          <motion.div variants={bentoVariant} id="projects" className="md:col-span-12 bg-gradient-to-br from-cyan-900/20 via-zinc-900/40 to-violet-900/20 p-8 md:p-12 rounded-3xl border border-white/5 backdrop-blur-sm relative overflow-hidden group hover:border-cyan-500/30 transition-all">
 
-            <div className="relative z-10">
-              <div className="w-10 h-10 bg-cyan-500/10 rounded-full flex items-center justify-center mb-6">
-                <Sparkles className="text-cyan-400" size={20} />
+            <div className="relative z-10 max-w-6xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold mb-6">
+                <Sparkles size={14} />
+                <span>Featured AI Architectures</span>
               </div>
-              <h3 className="text-2xl font-medium text-white mb-2">Rabbitron Lab</h3>
-              <p className="text-cyan-400 text-sm font-mono mb-4">Founder & Educator</p>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  A revolutionary non-profit AI club aligned with the UAE National AI Strategy 2031. We don't just talk about the future; we build it by empowering K-12 and university students with hands-on AI engineering logic.
-                </p>
-                <div className="flex flex-col gap-3 justify-center">
-                  <a href="https://rabbitronlab.com" target="_blank" rel="noreferrer" className="px-5 py-2.5 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 rounded-xl text-sm font-medium transition-all flex items-center justify-between border border-cyan-500/20">
-                    Visit Rabbitron Lab <ChevronRight size={16} />
-                  </a>
-                  <a href="https://lnkd.in/dTUFaskT" target="_blank" rel="noreferrer" className="px-5 py-2.5 bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366] rounded-xl text-sm font-medium transition-all flex items-center justify-between border border-[#25D366]/20">
-                    Join WhatsApp Tribe <UsersIcon size={16} />
-                  </a>
+              <h3 className="text-3xl font-medium text-white mb-8">Agentic Systems & Initiatives</h3>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                {/* Project 1 */}
+                <div className="bg-black/40 border border-white/5 p-6 rounded-2xl hover:bg-black/60 transition-colors">
+                  <div className="text-violet-400 mb-4"><Database size={24} /></div>
+                  <h4 className="text-lg text-white font-medium mb-2">Generative AI Data Agent</h4>
+                  <p className="text-sm text-gray-400 mb-4 leading-relaxed">Agent built with Langchain, FAISS, and ChromaDB powered by Azure OpenAI LLMs to autonomously query and manage massive structured datasets.</p>
                 </div>
+
+                {/* Project 2 */}
+                <div className="bg-black/40 border border-white/5 p-6 rounded-2xl hover:bg-black/60 transition-colors">
+                  <div className="text-cyan-400 mb-4"><BrainCircuit size={24} /></div>
+                  <h4 className="text-lg text-white font-medium mb-2">Self-Critic Python Agent</h4>
+                  <p className="text-sm text-gray-400 mb-4 leading-relaxed">An advanced autonomous AI agent that evaluates its own generated logic and corrects hallucinations before outputting final results.</p>
+                </div>
+
+                {/* Rabbitron */}
+                <div className="bg-black/40 border border-white/5 p-6 rounded-2xl hover:bg-black/60 transition-colors relative overflow-hidden border-cyan-500/30">
+                  <div className="absolute top-0 right-0 p-4 opacity-10"><GraduationCap size={60} /></div>
+                  <div className="text-cyan-400 mb-4"><Sparkles size={24} /></div>
+                  <h4 className="text-lg text-white font-medium mb-2">Rabbitron Labs</h4>
+                  <p className="text-sm text-gray-400 mb-6 leading-relaxed">Directing external affairs for an NPO AI club aligned with UAE National AI Strategy 2031, teaching K-12 students about deep tech.</p>
+
+                  <div className="flex gap-2">
+                    <a href="https://rabbitronlab.com" target="_blank" rel="noreferrer" className="text-xs font-mono text-cyan-400 bg-cyan-500/10 px-3 py-1.5 rounded-full hover:bg-cyan-500/20 transition-colors border border-cyan-500/20">Launch Site</a>
+                  </div>
+                </div>
+
               </div>
             </div>
           </motion.div>
@@ -155,21 +215,24 @@ function App() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-6 bg-zinc-900/40 p-10 md:p-14 rounded-3xl border border-white/5 text-center relative overflow-hidden"
+          className="mt-6 bg-zinc-900/40 p-10 md:p-14 rounded-3xl border border-white/5 text-center relative overflow-hidden border-dashed"
           id="contact"
         >
+          {/* Scanline effect */}
+          <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] opacity-10" />
+
           <div className="max-w-2xl mx-auto relative z-10">
-            <h2 className="text-3xl font-medium text-white mb-4">Have AI Doubts? Let's Talk.</h2>
-            <p className="text-gray-400 mb-8 leading-relaxed">
-              I am not here to sell you consulting hours. If you are a student, a builder, or an enthusiast struggling with AI adoption, system architecture, or career paths, I am here to help. Reach out directly.
+            <h2 className="text-3xl font-medium text-white mb-4">Initialize Handshake.</h2>
+            <p className="text-gray-400 mb-8 leading-relaxed font-mono text-sm">
+              &gt; Looking to collaborate on neural networks, agentic workflows, or just need to debug your AI roadmap? Opening comms channel...
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="mailto:contact@example.com" className="px-8 py-3 bg-white text-black rounded-full font-medium text-sm hover:scale-105 transition-all flex items-center gap-2">
-                <Mail size={16} /> Send an Email
+              <a href="mailto:contact@example.com" className="px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-black rounded-full font-bold text-sm hover:scale-105 transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20">
+                <Terminal size={16} /> Execute Email()
               </a>
-              <a href="https://linkedin.com/in/sushant-p-a105a9240/" target="_blank" rel="noreferrer" className="px-8 py-3 bg-zinc-800 text-white rounded-full font-medium text-sm hover:bg-zinc-700 transition-all border border-zinc-700 flex items-center gap-2">
-                <Linkedin size={16} /> Message on LinkedIn
+              <a href="https://linkedin.com/in/sushant-p-a105a9240/" target="_blank" rel="noreferrer" className="px-8 py-3 bg-zinc-800 text-white rounded-full font-medium text-sm transition-all border border-zinc-700 hover:border-gray-500 flex items-center gap-2">
+                <Linkedin size={16} /> LinkedIn
               </a>
             </div>
           </div>
@@ -177,21 +240,10 @@ function App() {
 
       </main>
 
-      <footer className="py-8 px-6 border-t border-white/5 text-center text-xs font-mono text-gray-600">
-        SYS.SUSHANT_P // VERSION 2.0 // FUTURE-READY
+      <footer className="py-8 px-6 border-t border-white/5 flex flex-col items-center justify-center gap-2 text-xs font-mono text-gray-600 relative z-10">
+        <div>SYS.SUSHANTPATIL // AI_DEV_V.3.1.0 // ONLINE</div>
       </footer>
     </div>
-  );
-}
-
-function UsersIcon({ size }: { size: number }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-    </svg>
   );
 }
 
