@@ -1,11 +1,8 @@
 import { motion } from 'framer-motion';
-import {
-  Bot,
+Bot,
   Terminal,
-  MessageSquare,
   ChevronRight,
   Linkedin,
-  Mail,
   GraduationCap,
   Sparkles,
   Github,

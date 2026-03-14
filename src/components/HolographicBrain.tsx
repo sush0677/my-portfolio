@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { useGLTF } from '@react-three/drei';
 
 export function HolographicBrain(props: any) {
     const group = useRef<THREE.Group>(null);

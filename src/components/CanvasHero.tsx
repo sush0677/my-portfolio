@@ -1,8 +1,7 @@
-import { Suspense, useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload } from '@react-three/drei';
 import { HolographicBrain } from './HolographicBrain';
-import * as THREE from 'three';
 
 export function CanvasHero() {
     return (
