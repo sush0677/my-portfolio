@@ -316,17 +316,17 @@ function App() {
           <GlowCard className="bg-zinc-950/40 p-16 md:p-32 rounded-[4rem] border-dashed border-zinc-800 hover:border-primary/30 group">
              <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] scale-150" />
              
-             <div className="relative z-10 max-w-3xl mx-auto">
+              <div className="relative z-10 max-w-3xl mx-auto">
                 <Zap className="mx-auto text-primary mb-10 animate-pulse-slow" size={64} />
-                <h2 className="text-6xl md:text-9xl font-black mb-8 tracking-tighter uppercase italic">Ready?</h2>
+                <h2 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter uppercase italic">Let's Connect</h2>
                 <p className="text-lg md:text-2xl text-zinc-400 mb-14 leading-relaxed font-light mx-auto">
-                  Stop looking for consultants. Start looking for architects. <br className="hidden md:block" />
-                  Let's build something that thinks for itself.
+                  Want to have a 1-on-1 chat about AI, research, or potential collaborations? <br className="hidden md:block" />
+                  Drop me an email to book a meeting!
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-6">
-                  <a href="mailto:contact@example.com" className="px-14 py-6 bg-primary text-black rounded-2xl font-black tracking-widest text-sm hover:scale-105 transition-all shadow-2xl shadow-primary/20">
-                    Send Email
+                  <a href="mailto:sushant007.p7@gmail.com" className="px-14 py-6 bg-primary text-black rounded-2xl font-black tracking-widest text-sm hover:scale-105 transition-all shadow-2xl shadow-primary/20">
+                    Book a Meeting
                   </a>
                   <a href="https://linkedin.com/in/sushant-p-a105a9240/" target="_blank" rel="noreferrer" className="px-14 py-6 bg-white/5 text-white rounded-2xl font-black tracking-widest text-sm border border-white/10 hover:bg-white/10 transition-all">
                     LinkedIn Profile
