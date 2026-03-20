@@ -105,11 +105,11 @@ function App() {
               </motion.span>
             </AnimatePresence>
             <div className="flex gap-6 items-center">
-              <a href="#about" className="hover:text-white transition-colors">_ID</a>
-              <a href="#nodes" className="hover:text-white transition-colors">_NODES</a>
-              <a href="#labs" className="hover:text-white transition-colors">_LABS</a>
-              <a href="#contact" className="px-4 py-1.5 bg-primary/10 border border-primary/30 text-primary rounded-full hover:bg-primary/20 transition-all text-[9px] font-bold">
-                CONNECT
+              <a href="#about" className="hover:text-white transition-colors font-bold">About</a>
+              <a href="#journey" className="hover:text-white transition-colors font-bold">Journey</a>
+              <a href="#labs" className="hover:text-white transition-colors font-bold">Labs</a>
+              <a href="#contact" className="px-5 py-2 bg-primary/10 border border-primary/30 text-primary rounded-full hover:bg-primary/20 transition-all font-bold">
+                Connect
               </a>
             </div>
           </div>
@@ -124,26 +124,26 @@ function App() {
           <GlowCard className="md:col-span-8 p-12 md:p-16 flex flex-col justify-center min-h-[450px]">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[10px] font-mono font-bold uppercase tracking-widest mb-8 w-fit shrink-0">
               <Activity size={12} className="animate-spin-slow" />
-              STATUS: AGENT_STREAM_ACTIVE
+              STATUS: OPEN FOR OPPORTUNITIES
             </div>
 
-            <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-[0.9] mb-8">
-              ARCHITECTING<br />
+            <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-[0.9] mb-8 text-white">
+              I AM THE<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary animate-gradient">
-                AGENTIC SYSTEMS.
+                AGENTIC LAYER.
               </span>
             </h1>
 
             <p className="text-lg md:text-2xl text-zinc-400 max-w-2xl font-light leading-relaxed mb-10">
-              I am <span className="text-white font-medium">Sushant Patil</span>. I bridge the gap between human intent and autonomous intelligence, orchestrating AI ecosystems for the next decade.
+              I am <span className="text-white font-medium">Sushant Patil</span>. I architect autonomous ecosystems and demystify the complexities of machine intelligence for the next generation.
             </p>
 
             <div className="flex flex-wrap gap-5">
               <a href="#contact" className="px-8 py-4 bg-white text-black rounded-2xl font-bold text-sm hover:translate-y-[-2px] transition-all flex items-center gap-3 shadow-xl">
-                START DIALOG <MessageSquare size={18} />
+                Start Conversation <MessageSquare size={18} />
               </a>
               <a href="https://github.com/sush0677" target="_blank" rel="noreferrer" className="px-8 py-4 bg-zinc-900 text-white rounded-2xl font-bold text-sm hover:bg-zinc-800 transition-all border border-white/10 flex items-center gap-3">
-                OPEN SOURCE <Github size={18} />
+                GitHub Repos <Github size={18} />
               </a>
             </div>
           </GlowCard>
@@ -152,8 +152,8 @@ function App() {
           <GlowCard className="md:col-span-4 aspect-square flex items-center justify-center p-0 relative group">
             <div className="absolute inset-8 border border-primary/20 rounded-[2rem] z-10 pointer-events-none group-hover:scale-105 transition-transform duration-700" />
             
-            <div className="absolute bottom-10 left-10 text-[8px] font-mono text-primary/40 tracking-[0.3em] uppercase z-20">
-              REF.SUSHANT.0677 // UAE
+            <div className="absolute bottom-10 left-10 text-xs font-mono text-primary/60 tracking-[0.2em] uppercase z-20 font-bold">
+              Sushant Patil // UAE
             </div>
 
             <motion.div
@@ -172,7 +172,7 @@ function App() {
           {/* Neural Architecture Card */}
           <GlowCard id="nodes" className="md:col-span-5 border-secondary/20 hover:border-secondary/40">
             <div className="flex items-center justify-between mb-8">
-              <h3 className="text-xl font-bold uppercase tracking-tight">Neural_Stack</h3>
+              <h3 className="text-xl font-bold uppercase tracking-tight">Core Expertise</h3>
               <Network className="text-secondary animate-pulse" />
             </div>
 
@@ -199,7 +199,7 @@ function App() {
               <Cpu className="text-primary relative z-10 animate-spin-slow" size={48} />
             </div>
             <div className="text-5xl font-black text-white mb-2 tracking-tighter">12+</div>
-            <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-600">Enterprise_Deployments</div>
+            <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-600">Enterprise Projects</div>
           </GlowCard>
 
           {/* Current Mission Card */}
@@ -255,23 +255,36 @@ function App() {
             </div>
           </GlowCard>
 
-          {/* Footer Experience Hub */}
-          <GlowCard className="md:col-span-12 py-10 px-12 border-white/5 opacity-60 hover:opacity-100 transition-opacity">
-            <div className="grid md:grid-cols-3 gap-12 text-center md:text-left">
-              <div className="space-y-3">
-                <div className="text-primary font-mono text-[10px] font-bold">RESEARCH</div>
-                <h4 className="text-lg font-bold">Birmingham Alum</h4>
-                <p className="text-xs text-zinc-500 font-mono">MSc Artificial Intelligence</p>
+          {/* My Journey Section */}
+          <GlowCard id="journey" className="md:col-span-12 p-12 md:p-16 border-white/5">
+            <h3 className="text-3xl font-black mb-12 tracking-tight flex items-center gap-4 text-white">
+              <Activity className="text-primary" /> My Journey
+            </h3>
+            
+            <div className="relative border-l border-white/10 pl-8 ml-4 space-y-12">
+              {/* Present */}
+              <div className="relative">
+                <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-background border-2 border-primary z-10" />
+                <div className="text-primary font-mono text-xs font-bold mb-2">2023 — 2025</div>
+                <h4 className="text-xl font-bold text-white">University of Birmingham</h4>
+                <p className="text-sm font-mono text-zinc-400 mb-4">Postgraduate in Artificial Intelligence & Machine Learning</p>
+                <p className="text-sm text-zinc-400 font-light leading-relaxed">
+                  Completing my Master's degree in AI, exploring advanced ML pipelines and neural network architectures. Simultaneously leading AI strategies at <span className="text-zinc-300 font-medium">Nathan Digital</span> and completing various startup internships in the tech space.
+                </p>
               </div>
-              <div className="space-y-3">
-                <div className="text-secondary font-mono text-[10px] font-bold">OPERATIONS</div>
-                <h4 className="text-lg font-bold">Hackathon Veteran</h4>
-                <p className="text-xs text-zinc-500 font-mono">800+ System Nodes</p>
-              </div>
-              <div className="space-y-3">
-                <div className="text-emerald-500 font-mono text-[10px] font-bold">COLLABS</div>
-                <h4 className="text-lg font-bold">Available for Build</h4>
-                <p className="text-xs text-zinc-500 font-mono">Open_Protocol_v3</p>
+
+              {/* Past */}
+              <div className="relative">
+                <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-background border-2 border-zinc-700 z-10" />
+                <div className="text-zinc-500 font-mono text-xs font-bold mb-2">2019 — 2023</div>
+                <h4 className="text-xl font-bold text-white">KLS Gogte Institute of Technology</h4>
+                <p className="text-sm font-mono text-zinc-400 mb-4">Undergraduate in Computer Science</p>
+                <p className="text-sm text-zinc-400 font-light leading-relaxed mb-4">
+                  Built a strong foundation in computer science and software engineering, participating heavily in university events, competitive programming, and Hackathons.
+                </p>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-widest">
+                  🏆 Winner: Manthan Hackathon 2021
+                </div>
               </div>
             </div>
           </GlowCard>
@@ -291,11 +304,11 @@ function App() {
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-6">
-                  <a href="mailto:contact@example.com" className="px-14 py-6 bg-primary text-black rounded-2xl font-black tracking-widest text-xs hover:scale-105 transition-all shadow-2xl shadow-primary/20">
-                    START_TXN_01()
+                  <a href="mailto:contact@example.com" className="px-14 py-6 bg-primary text-black rounded-2xl font-black tracking-widest text-sm hover:scale-105 transition-all shadow-2xl shadow-primary/20">
+                    Send Email
                   </a>
-                  <a href="https://linkedin.com/in/sushant-p-a105a9240/" target="_blank" rel="noreferrer" className="px-14 py-6 bg-white/5 text-white rounded-2xl font-black tracking-widest text-xs border border-white/10 hover:bg-white/10 transition-all">
-                    HUD_LAYER:P-LINKEDIN
+                  <a href="https://linkedin.com/in/sushant-p-a105a9240/" target="_blank" rel="noreferrer" className="px-14 py-6 bg-white/5 text-white rounded-2xl font-black tracking-widest text-sm border border-white/10 hover:bg-white/10 transition-all">
+                    LinkedIn Profile
                   </a>
                 </div>
              </div>

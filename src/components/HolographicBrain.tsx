@@ -82,9 +82,7 @@ export function HolographicBrain(props: any) {
                 <bufferGeometry>
                     <bufferAttribute
                         attach="attributes-position"
-                        count={particleCount}
-                        array={positions}
-                        itemSize={3}
+                        args={[positions, 3]}
                     />
                 </bufferGeometry>
                 <pointsMaterial size={0.02} color="#06b6d4" transparent opacity={0.4} sizeAttenuation={true} />
