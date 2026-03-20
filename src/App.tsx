@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { cn } from './utils/cn';
 import { CanvasHero } from './components/CanvasHero';
+import { AgenticLayer } from './components/AgenticLayer';
 
 const SYSTEM_LOGS = [
   "INITIALIZING_NEURAL_INTERFACE...",
@@ -128,14 +129,14 @@ function App() {
             </div>
 
             <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-[0.9] mb-8 text-white">
-              I AM THE<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary animate-gradient">
-                AGENTIC LAYER.
+              Sushant Patil.<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary animate-gradient text-4xl md:text-6xl uppercase">
+                AI Architect & Strategist
               </span>
             </h1>
 
             <p className="text-lg md:text-2xl text-zinc-400 max-w-2xl font-light leading-relaxed mb-10">
-              I am <span className="text-white font-medium">Sushant Patil</span>. I architect autonomous ecosystems and demystify the complexities of machine intelligence for the next generation.
+              I architect autonomous ecosystems and demystify the complexities of machine intelligence for the next generation.
             </p>
 
             <div className="flex flex-wrap gap-5">
@@ -328,6 +329,9 @@ function App() {
            <a href="#about" className="hover:text-zinc-400 transition-colors">BACK_TO_TOP</a>
         </div>
       </footer>
+
+      {/* Floating Agentic Layer Chat UI */}
+      <AgenticLayer />
     </div>
   );
 }
