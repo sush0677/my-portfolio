@@ -128,10 +128,10 @@ function App() {
               STATUS: OPEN FOR OPPORTUNITIES
             </div>
 
-            <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-[0.9] mb-8 text-white">
+            <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-[0.9] mb-6 text-white">
               Sushant Patil.<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary animate-gradient text-4xl md:text-6xl uppercase">
-                AI Adoption Coordinator
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary animate-gradient text-xl md:text-3xl tracking-normal uppercase font-bold mt-4 inline-block">
+                Passionate about AI & Research
               </span>
             </h1>
 
@@ -269,10 +269,7 @@ function App() {
                 <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-background border-2 border-primary z-10" />
                 <div className="text-primary font-mono text-xs font-bold mb-2">Apr 2025 — Present</div>
                 <h4 className="text-xl font-bold text-white">Nathan Digital</h4>
-                <p className="text-sm font-mono text-zinc-400 mb-4">AI Adoption Coordinator</p>
-                <p className="text-sm text-zinc-400 font-light leading-relaxed">
-                  Leading the coordination and smooth adoption of AI technologies within enterprise environments. Developing scalable ML integrations, ensuring that AI transformations are effective and meaningful.
-                </p>
+                <p className="text-sm font-mono text-zinc-400">AI Adoption Coordinator</p>
               </div>
 
               {/* Rabbitron Lab */}
