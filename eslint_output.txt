@@ -1,0 +1,49 @@
+
+> my-portfolio@1.0.0 lint
+> eslint .
+
+
+C:\Users\hp\OneDrive\Documents\GitHub\my-portfolio\src\components\HolographicBrain.tsx
+   5:41  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        @typescript-eslint/no-explicit-any
+  14:29  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\hp\OneDrive\Documents\GitHub\my-portfolio\src\components\HolographicBrain.tsx:14:29
+  12 |         const pos = new Float32Array(particleCount * 3);
+  13 |         for (let i = 0; i < particleCount; i++) {
+> 14 |             const r = 2.4 + Math.random() * 0.8;
+     |                             ^^^^^^^^^^^^^ Cannot call impure function
+  15 |             const theta = Math.random() * Math.PI * 2;
+  16 |             const phi = Math.random() * Math.PI;
+  17 |             pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);         react-hooks/purity
+  15:27  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\hp\OneDrive\Documents\GitHub\my-portfolio\src\components\HolographicBrain.tsx:15:27
+  13 |         for (let i = 0; i < particleCount; i++) {
+  14 |             const r = 2.4 + Math.random() * 0.8;
+> 15 |             const theta = Math.random() * Math.PI * 2;
+     |                           ^^^^^^^^^^^^^ Cannot call impure function
+  16 |             const phi = Math.random() * Math.PI;
+  17 |             pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+  18 |             pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);  react-hooks/purity
+  16:25  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\hp\OneDrive\Documents\GitHub\my-portfolio\src\components\HolographicBrain.tsx:16:25
+  14 |             const r = 2.4 + Math.random() * 0.8;
+  15 |             const theta = Math.random() * Math.PI * 2;
+> 16 |             const phi = Math.random() * Math.PI;
+     |                         ^^^^^^^^^^^^^ Cannot call impure function
+  17 |             pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+  18 |             pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+  19 |             pos[i * 3 + 2] = r * Math.cos(phi);      react-hooks/purity
+
+C:\Users\hp\OneDrive\Documents\GitHub\my-portfolio\src\three-types.d.ts
+  6:23  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+✖ 5 problems (5 errors, 0 warnings)
+
