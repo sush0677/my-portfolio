@@ -131,12 +131,12 @@ function App() {
             <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-[0.9] mb-8 text-white">
               Sushant Patil.<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary animate-gradient text-4xl md:text-6xl uppercase">
-                AI Architect & Strategist
+                AI Adoption Coordinator
               </span>
             </h1>
 
             <p className="text-lg md:text-2xl text-zinc-400 max-w-2xl font-light leading-relaxed mb-10">
-              I architect autonomous ecosystems and demystify the complexities of machine intelligence for the next generation.
+              I specialize in coordinating seamless AI integration for enterprises and demystifying machine intelligence for the next generation.
             </p>
 
             <div className="flex flex-wrap gap-5">
@@ -211,7 +211,7 @@ function App() {
               </div>
               <div>
                 <div className="text-lg font-bold">Nathan Digital</div>
-                <div className="text-[10px] font-mono text-emerald-400">AI STRATEGIST</div>
+                <div className="text-[10px] font-mono text-emerald-400 tracking-widest uppercase">AI Adoption Coordinator</div>
               </div>
             </div>
             <p className="text-sm text-zinc-400 leading-relaxed font-light italic opacity-80 decoration-primary/30">
@@ -263,18 +263,41 @@ function App() {
             </h3>
             
             <div className="relative border-l border-white/10 pl-8 ml-4 space-y-12">
-              {/* Present */}
+              
+              {/* Nathan Digital */}
               <div className="relative">
                 <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-background border-2 border-primary z-10" />
-                <div className="text-primary font-mono text-xs font-bold mb-2">2023 — 2025</div>
-                <h4 className="text-xl font-bold text-white">University of Birmingham</h4>
-                <p className="text-sm font-mono text-zinc-400 mb-4">Postgraduate in Artificial Intelligence & Machine Learning</p>
+                <div className="text-primary font-mono text-xs font-bold mb-2">Apr 2025 — Present</div>
+                <h4 className="text-xl font-bold text-white">Nathan Digital</h4>
+                <p className="text-sm font-mono text-zinc-400 mb-4">AI Adoption Coordinator</p>
                 <p className="text-sm text-zinc-400 font-light leading-relaxed">
-                  Completing my Master's degree in AI, exploring advanced ML pipelines and neural network architectures. Simultaneously leading AI strategies at <span className="text-zinc-300 font-medium">Nathan Digital</span> and completing various startup internships in the tech space.
+                  Leading the coordination and smooth adoption of AI technologies within enterprise environments. Developing scalable ML integrations, ensuring that AI transformations are effective and meaningful.
                 </p>
               </div>
 
-              {/* Past */}
+              {/* Rabbitron Lab */}
+              <div className="relative">
+                <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-background border-2 border-secondary z-10" />
+                <div className="text-secondary font-mono text-xs font-bold mb-2">Jan 2025 — Present</div>
+                <h4 className="text-xl font-bold text-white">Rabbitron Labs</h4>
+                <p className="text-sm font-mono text-zinc-400 mb-4">External Affairs</p>
+                <p className="text-sm text-zinc-400 font-light leading-relaxed">
+                  Directing external initiatives and community partnerships for an AI club aligned with the UAE National AI Strategy 2031, empowering students through deep-logic engineering.
+                </p>
+              </div>
+
+              {/* Postgrad */}
+              <div className="relative">
+                <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-background border-2 border-emerald-500 z-10" />
+                <div className="text-emerald-500 font-mono text-xs font-bold mb-2">2023 — 2025</div>
+                <h4 className="text-xl font-bold text-white">University of Birmingham</h4>
+                <p className="text-sm font-mono text-zinc-400 mb-4">Postgraduate in Artificial Intelligence & Machine Learning</p>
+                <p className="text-sm text-zinc-400 font-light leading-relaxed">
+                  Mastered advanced ML pipelines, data analysis, and neural network architectures. Over this period, completed several crucial internships and worked hands-on in a startup environment.
+                </p>
+              </div>
+
+              {/* Undergrad */}
               <div className="relative">
                 <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-background border-2 border-zinc-700 z-10" />
                 <div className="text-zinc-500 font-mono text-xs font-bold mb-2">2019 — 2023</div>

@@ -5,7 +5,7 @@ import { cn } from '../utils/cn';
 
 const QA_DATABASE = [
   { keywords: ['hello', 'hi', 'hey'], answer: "Greetings. I am the Agentic Proxy for Sushant. How can I assist you in navigating this portfolio?" },
-  { keywords: ['experience', 'work', 'job', 'nathan'], answer: "Sushant is an AI Strategist at Nathan Digital. He bridges the gap between AI tech and scalable enterprise systems, specializing in Agent Orchestration." },
+  { keywords: ['experience', 'work', 'job', 'nathan'], answer: "Sushant is an AI Adoption Coordinator at Nathan Digital. He specializes in bridging the gap between cutting-edge AI technology and scalable enterprise implementations." },
   { keywords: ['education', 'degree', 'university', 'college', 'birmingham'], answer: "Sushant holds a BSc in Computer Science from KLS Gogte Institute of Technology (2023) and is currently completing his MSc in Artificial Intelligence at the University of Birmingham (2025)." },
   { keywords: ['contact', 'email', 'hire', 'message'], answer: "You can initiate a direct connection by sending an email or connecting via LinkedIn. Feel free to use the 'Connect' section at the bottom of the page." },
   { keywords: ['rabbitron', 'labs', 'startup'], answer: "Rabbitron Labs is an AI tech hub aligned with the UAE National AI Strategy 2031, aiming to empower the next generation of engineers." },
